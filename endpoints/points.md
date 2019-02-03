@@ -196,20 +196,20 @@ Reset the alltime leaderboard
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="" path="" %}
+{% api-method method="get" host="https://api.streamelements.com" path="/kappa/v2/points/:channel/alltime" %}
 {% api-method-summary %}
-
+Get channel points
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+Retrieve all time points for the specified channel.
 {% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
+{% api-method-parameter name="channel" type="string" required=true %}
+Channel ID
 {% endapi-method-parameter %}
 {% endapi-method-path-parameters %}
 {% endapi-method-request %}
@@ -220,8 +220,19 @@ Reset the alltime leaderboard
 
 {% endapi-method-response-example-description %}
 
-```
-
+```javascript
+{
+    "_total": 58,
+    "users": [
+        {
+            "username": "user1",
+            "points": "100"
+        },
+        {
+            "username": "user2",
+            "points": "200"
+        }]
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
