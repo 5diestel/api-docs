@@ -2,9 +2,9 @@
 
 {% api-method method="get" host="https://api.streamelements.com" path="/kappa/v2/channels/:channel" %} {% api-method-summary %} Get channel information {% endapi-method-summary %}
 
-{% api-method-description %} Retrieve information for the specified channel. {% endapi-method-description %}
+{% api-method-description %} Retrieve information about the specified channel. {% endapi-method-description %}
 
-{% api-method-spec %} {% api-method-request %} {% api-method-path-parameters %} {% api-method-parameter name="channel" type="string" required=true %} Channel ID {% endapi-method-parameter %} {% endapi-method-path-parameters %} {% endapi-method-request %}
+{% api-method-spec %} {% api-method-request %} {% api-method-path-parameters %} {% api-method-parameter name="channel" type="string" required=true %} Channel ID or Channel name {% endapi-method-parameter %} {% endapi-method-path-parameters %} {% endapi-method-request %}
 
 {% api-method-headers %}
 {% api-method-parameter name="Authorization" type="string" required=true %}
@@ -18,8 +18,15 @@ Authorization Bearer token
 ```javascript
 {
     "profile": {
-        "headerImage": "https://cdn.streamelements.com/static/user/profile_header_default.png",
-        "title": "profile title"
+        "social": {
+            "twitter": "https://twitter.com/twitchuser",
+            "instagram": "https://www.instagram.com/twitchuser/",
+            "youtube": "https://www.youtube.com/user/twitchuser",
+            "discord": "https://discord.gg/twitchuser"
+        },
+        "headerImage": "https://cdn.streamelements.com/uploads/twitchuser.jpg",
+        "title": "twitchuser's profile",
+        "language": "en"
     },
     "provider": "twitch",
     "_id": "1234567890",
