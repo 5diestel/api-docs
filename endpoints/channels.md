@@ -18,13 +18,14 @@ Authorization Bearer token
 ```javascript
 {
     "profile": {
-        "headerImage": "https://cdn.streamelements.com/static/user/profile_header_default.png"
+        "headerImage": "https://cdn.streamelements.com/static/user/profile_header_default.png",
+        "title": "profile title"
     },
     "provider": "twitch",
     "_id": "1234567890",
     "isPartner": false,
     "broadcasterType": "affiliate",
-    "providerId": "568709",
+    "providerId": "12345",
     "displayName": "TwitchUser",
     "username": "twitchuser",
     "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/twitchuser-profile_image-8a9fbe3c190447ce-300x300.jpeg",
