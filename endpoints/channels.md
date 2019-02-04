@@ -6,12 +6,6 @@
 
 {% api-method-spec %} {% api-method-request %} {% api-method-path-parameters %} {% api-method-parameter name="channel" type="string" required=true %} Channel ID or Channel name {% endapi-method-parameter %} {% endapi-method-path-parameters %} {% endapi-method-request %}
 
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
-Authorization Bearer token
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
 {% api-method-response %} {% api-method-response-example httpCode=200 %} {% api-method-response-example-description %}
 
 {% endapi-method-response-example-description %}
