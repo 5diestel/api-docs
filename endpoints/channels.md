@@ -1,62 +1,47 @@
 # Channels
 
-{% api-method method="get" host="" path="/v1/cakes/:id" %}
-{% api-method-summary %}
-Get Cakes
-{% endapi-method-summary %}
+{% api-method method="get" host="https://api.streamelements.com" path="/kappa/v2/channels/:channel" %} {% api-method-summary %} Get channel information {% endapi-method-summary %}
 
-{% api-method-description %}
-This endpoint allows you to get free cakes.
-{% endapi-method-description %}
+{% api-method-description %} Retrieve information for the specified channel. {% endapi-method-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="string" %}
-ID of the cake to get, for free of course.
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% api-method-spec %} {% api-method-request %} {% api-method-path-parameters %} {% api-method-parameter name="channel" type="string" required=true %} Channel ID {% endapi-method-parameter %} {% endapi-method-path-parameters %} {% endapi-method-request %}
 
 {% api-method-headers %}
-{% api-method-parameter name="Authentication" type="string" required=true %}
-Authentication token to track down who is emptying our stocks.
+{% api-method-parameter name="Authorization" type="string" required=true %}
+Authorization Bearer token
 {% endapi-method-parameter %}
 {% endapi-method-headers %}
 
-{% api-method-query-parameters %}
-{% api-method-parameter name="recipe" type="string" %}
-The API will do its best to find a cake matching the provided recipe.
-{% endapi-method-parameter %}
+{% api-method-response %} {% api-method-response-example httpCode=200 %} {% api-method-response-example-description %}
 
-{% api-method-parameter name="gluten" type="boolean" %}
-Whether the cake should be gluten-free or not.
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Cake successfully retrieved.
 {% endapi-method-response-example-description %}
-
-```javascript
 {
-    "name": "Cake's name",
-    "recipe": "Cake's recipe name",
-    "cake": "Binary cake"
+    "profile": {
+        "headerImage": "https://cdn.streamelements.com/static/user/profile_header_default.png"
+    },
+    "provider": "twitch",
+    "_id": "1234567890",
+    "isPartner": false,
+    "broadcasterType": "affiliate",
+    "providerId": "568709",
+    "displayName": "TwitchUser",
+    "username": "twitchuser",
+    "avatar": "https://static-cdn.jtvnw.net/jtv_user_pictures/twitchuser-profile_image-8a9fbe3c190447ce-300x300.jpeg",
+    "alias": "twitchuser",
+    "inactive": false
 }
-```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
 {% api-method-response-example-description %}
-Could not find a cake matching this query.
+Could not find a user matching this query.
 {% endapi-method-response-example-description %}
 
 ```javascript
 {
-    "message": "Ain't no cake like that."
+    "statusCode": 404,
+    "error": "Not Found",
+    "message": "channel invalidid was not found"
 }
 ```
 {% endapi-method-response-example %}
