@@ -15,6 +15,7 @@ Authorization Bearer token
 {% api-method-response %} {% api-method-response-example httpCode=200 %} {% api-method-response-example-description %}
 
 {% endapi-method-response-example-description %}
+```javascript
 {
     "profile": {
         "headerImage": "https://cdn.streamelements.com/static/user/profile_header_default.png"
@@ -30,6 +31,7 @@ Authorization Bearer token
     "alias": "twitchuser",
     "inactive": false
 }
+```
 {% endapi-method-response-example %}
 
 {% api-method-response-example httpCode=404 %}
